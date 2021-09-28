@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TallerLab02 {
     public static void main(String[] args) {
         menu();
-        System.out.println("hola mundo");
+
     }
 
     public static int[] generarArreglo(){
