@@ -25,13 +25,18 @@ public class TallerLab02 {
     }
 
     public static int mayorProductoAdyacentes(int[] arreglo){
-        int mayorProducto = (arreglo[0]) * (arreglo[1]);
-        for (int i = 0; i < (arreglo.length - 2); i++){
-            if((mayorProducto) < (arreglo[i + 1] * arreglo[i + 2] )){
-                mayorProducto = arreglo[i + 1] * arreglo[i + 2];
+        if(arreglo.length<2){
+            System.out.println("error con el largo del arreglo");
+            return -1;
+        }else{
+            int mayorProducto = (arreglo[0]) * (arreglo[1]);
+            for (int i = 0; i < (arreglo.length - 2); i++){
+                if((mayorProducto) < (arreglo[i + 1] * arreglo[i + 2] )){
+                    mayorProducto = arreglo[i + 1] * arreglo[i + 2];
+                }
             }
+            return mayorProducto;
         }
-        return mayorProducto;
     }
 
     public static void menu(){
