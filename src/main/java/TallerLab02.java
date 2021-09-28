@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class TallerLab02 {
@@ -25,59 +24,40 @@ public class TallerLab02 {
         System.out.println("");
     }
 
-
-    public static void mayorProductoAdyacentes1(int[] arreglo){
+    public static int mayorProductoAdyacentes(int[] arreglo){
         int mayorProducto = (arreglo[0]) * (arreglo[1]);
         for (int i = 0; i < (arreglo.length - 2); i++){
-            if(arreglo[i] * arreglo[i + 1] < arreglo[i + 1] *arreglo[i + 2] ){
-                mayorProducto = arreglo[i + 1] *arreglo[i + 2];
+            if((mayorProducto) < (arreglo[i + 1] * arreglo[i + 2] )){
+                mayorProducto = arreglo[i + 1] * arreglo[i + 2];
             }
         }
-        //return mayorProducto;
-        System.out.println(mayorProducto);
+        return mayorProducto;
     }
-
 
     public static void menu(){
         System.out.println("ELIJA UNA OPCION" +
                 "\n[1] mostrar pares aydacentes" +
                 "\n[2] Mostrar el mayor valor de producto" +
-                "\n[3] caso 3" +
                 "\n[0] Salir");
-        int min = 0;
-        int max = 3;
-        elegirOpcionMenu(pedirNumeroLimitado(min, max));
+        elegirOpcionMenu();
     }
 
-    private static void elegirOpcionMenu(int opcion) { //digamos que el menu tiene 5 opciones --> min=0, max=4
+    private static void elegirOpcionMenu() { //digamos que el menu tiene 5 opciones --> min=0, max=4
         int min = 0;
-        int max = 3;
+        int max = 2;
         int[] arreglo = generarArreglo();
-        while (opcion != 0){
+        int opcion = -1;
+        do{
+            opcion = pedirNumeroLimitado(min, max);
             switch (opcion) {
                 case 1 -> mostrarParesAdyacentes(arreglo);
-                case 2 -> mayorProductoAdyacentes1(arreglo);
+                case 2 -> System.out.println(mayorProductoAdyacentes(arreglo));
                 case 0 -> casoSalir();
             }
-            opcion = pedirNumeroLimitado(min, max);
-        }
-    }
-
-    /*
-    public static void casoMostrarParesAdyacentes(){
+        } while (opcion != 0);
 
     }
-    public static void casoMenu2(){
-        System.out.println("HOLA MUNDO --> caso 2");
-    }
-    public static void casoMenu3(){
-        System.out.println("HOLA MUNDO --> caso 3");
-    }
-    public static void casoMenu4(){
-        System.out.println("HOLA MUNDO --> caso 4");
-    }
 
-     */
     public static void casoSalir(){
         System.out.println("Adios...");
     }
