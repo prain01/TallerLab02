@@ -4,22 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 class TallerLab02Test {
 
     @Test
-    void generarArreglo() {
+    void testGenerarArreglo() {
     }
 
     @Test
-    void mayorProductoAdyacentes() {
+    void testMayorProductoAdyacentes() {
     }
 
     @Test
-    void pedirNumeroLimitado() {
+    void testPedirNumeroLimitado() {
     }
 
     @Test
-    void pedirNumero() {
+    void testPedirNumero() {
     }
 
     @Test
-    void limitesNumero() {
+    void testLimitesNumero() {
     }
 }
